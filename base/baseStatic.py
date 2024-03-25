@@ -15,3 +15,16 @@ if __name__ == '__main__':
     print(cumulative_sum)
     print(cumulative_product)
 
+    # 线性回归
+    # 生成样本数据
+    np.random.seed(0)
+    X = np.random.rand(100)
+    Y = 3 * X + np.random.rand(100)
+    # 添加常数列，因为statsmodels的线性回归默认不包含截距项
+    X = sm.add_constant(X)
+    # 建立并拟合模型
+    model = sm.OLS(Y,X)
+    results = model.fit()
+
+    # 打印回归结果
+    print(results.summary())

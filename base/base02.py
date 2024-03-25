@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 # import pandas as pd
@@ -33,3 +34,9 @@ if __name__ == '__main__':
     ]
     df = pd.DataFrame(data, columns=['name', 'age', 'city'])
     print('df2', df)
+
+    # 中位数
+    datas =[1,3,5,6,7]
+    median = np.median(datas)
+    print("中位数:", median)
+
