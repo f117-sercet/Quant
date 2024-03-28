@@ -5,12 +5,11 @@ import akshare as ak
 import empyrical as ep
 import quantstats as qs
 import pymongo
-import warnings
-warnings.filterwarnings('ignore')
 
 if __name__ == '__main__':
     # 获取可转债代码列表
     conbon_list = ak.bond_zh_cov()['债券代码'].tolist()
+
 
 # print(conbon_list)
 
@@ -43,7 +42,7 @@ for code in conbon_list:
 
     data_df = pd.concat(data_list)  # 合并dataFrame
 
-    print(data_list)
+    # print(data_list)
 
     # 数据处理
     data_df['日期'] = pd.to_datetime(data_df['日期'])
