@@ -45,5 +45,4 @@ tock_comment_detail_zlkp_jgcyd_em_df = ak.stock_comment_detail_zlkp_jgcyd_em(sym
 # 输出：
 # 日期、收盘价、涨跌幅（单位: %）、主力净流入-净额、主力净流入-净占比（单位: %）、超大单净流入-净额、超大单净流入-净占比（单位: %）、
 # 大单净流入-净额、大单净流入-净占比（单位: %）、中单净流入-净额、中单净流入-净占比（单位: %）、小单净流入-净额、小单净流入-净占比
-
 stock_individual_fund_flow_df = ak.stock_individual_fund_flow(stock="600094", market="sh")
