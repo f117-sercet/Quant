@@ -30,9 +30,24 @@ if __name__ == '__main__':
     # 查询单个股票带日线行情
     df = pro.daily(ts_code='000001.SZ', start_date='20180701', end_date='20180718')
     # 查询多个股票的日线行情
-    df_list=pro.daily(ts_code='000001.SH',start_date='20180701', end_date='20180718')
+    df_list = pro.daily(ts_code='000001.SH', start_date='20180701', end_date='20180718')
     # 查询某一天全部股票的日线行情
     df_one_list = pro.daily(trade_date='20180701')
 
     # 获取财务数据
 
+    # 获取单个股票的业绩预告数据
+    df_01 = pro.forecast(ann_date='20190131', fields='ts_code,ann_date,end_date,type,p_change_min,p_change_max,'
+                                                     'net_profit_min')
+
+    # 获取某一季度全部股票的业绩预告数据
+    df_02 = pro.forecast_vip(period='20181231',
+                             fields='ts_code,ann_date,end_date,type,p_change_min,p_change_max,net_profit_min')
+
+    # 获取市场参考数据
+    # 获取某一交易日的龙虎榜交易明细
+    df_03 = pro.top_list(trade_date='20180928')
+
+    # 特色数据
+    # 获取某一股票在某一时间段内的筹码分布情况
+    df = pro.cyq_chips(ts_code='600000.SH', start_date='20220101', end_date='20220429')
