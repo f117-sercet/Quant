@@ -25,6 +25,7 @@ def average(data):
         sum += data[i]
     return sum / num
 
+
 # 定义其他函数
 
 if __name__ == '__main__':
