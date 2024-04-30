@@ -2,6 +2,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
 
 
 # 定义损失函数
@@ -36,3 +37,12 @@ if __name__ == '__main__':
     y = points[:, 1]
     plt.scatter(x, y)
     plt.show()
+
+    lr = LinearRegression()
+    x_new =x.reshape(-1,1)
+    y_new = y.reshape(-1,1)
+
+    # 从训练好的模型种提取系数和截距
+    lr.fit(x_new, y_new)
+    w = lr.coef_
+    b = lr.intercept_
