@@ -176,4 +176,32 @@ factor = df.set_index(['日期','股票代码'])['总市值']
 
 prices = df.pivot(index='日期', columns='股票代码', values='开盘价')
 ```  
-###### 2.用get_clean_factor_and_forward_returns函数来预处理因子数据
+###### 2.用get_clean_factor_and_forward_returns函数来预处理因子数据  
+```python
+   
+factor_data = al.utils.get_clean_factor_and_forward_returns(
+                factor=factor,
+                prices=prices,
+                quantiles=10,
+                periods=(1, 10))
+```  
+get_clean_factor_and_forward_returns函数的参数说明如下:  
+````markdown
+1. factor参数是刚才整理的因子数据；  
+2. prices参数是刚才整理的股票价格数据；
+3. quantiles参数是对因子进行分组测试的分组数，在本例中按市值大小分为10组；
+4. periods参数用于规定换仓的间隔时间，在本例中测试1天和10天两个换仓时间，需要注意这个参数的值是元组类型(1, 10)，而不能是数值（例如：1）或列表（例如：[1, 10]）。
+````
+###### 3. 用create_full_tear_sheet函数生成因子性能报告  
+得到factor_data数据之后，我们调用Alphalens的create_full_tear_sheet函数就能得到一份完整的因子评价报告：  
+```text
+
+al.tears.create_full_tear_sheet(factor_data)
+```  
+这份因子评价报告主要有三个部分的内容：
+```markdown
+1）因子分组收益的评价；
+2）因子信息系数（IC）的评价；
+3）因子换手率的评价。
+```
+by create_returns_tear_sheet函数、create_information_tear_sheet函数、create_turnover_tear_sheet函数,获取上述数据
