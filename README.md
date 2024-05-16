@@ -205,3 +205,20 @@ al.tears.create_full_tear_sheet(factor_data)
 3）因子换手率的评价。
 ```
 by create_returns_tear_sheet函数、create_information_tear_sheet函数、create_turnover_tear_sheet函数,获取上述数据
+###### 4. 用create_returns_tear_sheet函数生成因子性能报告  
+返回符合Alphalens格式要求的数据  
+```python
+
+factor_data = al.utils.get_clean_factor_and_forward_returns(
+                factor=factor,
+                prices=prices,
+                quantiles=10,
+                periods=(1, 10))
+```  
+参数说明：  
+```markdown
+1）factor参数为因子数据；
+2）prices参数为股票价格数据；
+3）quantiles参数是对因子进行分组测试的分组数，在本例中按市值大小分为10组；
+4）periods参数用于规定换仓的间隔时间，在本例中测试1天和10天两个换仓时间。
+```
