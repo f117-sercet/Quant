@@ -221,4 +221,10 @@ factor_data = al.utils.get_clean_factor_and_forward_returns(
 2）prices参数为股票价格数据；
 3）quantiles参数是对因子进行分组测试的分组数，在本例中按市值大小分为10组；
 4）periods参数用于规定换仓的间隔时间，在本例中测试1天和10天两个换仓时间。
-```
+```  
+###### 5.调用create_information_tear_sheet函数  
+获取函数生成因子的IC评价报告:
+```markdown
+al.tears.create_information_tear_sheet(factor_data)
+```  
+
