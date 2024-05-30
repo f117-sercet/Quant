@@ -294,4 +294,8 @@ al.tears.create_information_tear_sheet(factor_data)
 ```markdown
 
 股息收益率 = 每年的股息总额 / 总市值 =每股股息 / 每股股价
+```  
+##### 5. 市现率（P/CF）  
+```markdown
+市现率（P/CF） = 公司市值 / 经营现金流量 =  每股市价 / 每股经营现金流
 ```
