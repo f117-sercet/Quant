@@ -315,3 +315,20 @@ PEG比率 = 市盈率PE / 预期盈利增长率
 ```markdown
 企业价值倍数 = 企业价值EV / EBIT
 ```  
+#### PEG比率  
+```markdown
+PEG比率 = 市盈率PE / 预期盈利增长率
+```  
+#####  企业价值倍数  
+```markdown
+1)EV/EBIT     
+企业价值倍数 = 企业价值EV / EBIT
+EBIT = 营业利润 + 非营业收入 - 非营业支出  
+2)EV/EBITDA  
+企业价值倍数 = 企业价值EV / EBITDA
+```  
+EBITDA 是 Earnings Before Interest, Taxes, Depreciation, and Amortization 的缩写，意思是 "息税折旧摊销前利润"。EBITDA 是一种反映公司现金流盈利能力的指标，
+它不仅排除了利息支出和税收，还排除了折旧和摊销，因此可以更准确地反映公司的现金流情况。  
+```markdown
+EBITDA = EBIT + 折旧 + 摊销
+```
