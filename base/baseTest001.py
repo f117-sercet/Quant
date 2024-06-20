@@ -12,16 +12,16 @@ def computedTf(wordDict, bow):
     return tfDict
 
 
-def computeIDF(wordDictList, bow):
+def computeIDF(wordDictList):
     idfDict = dict.fromkeys(wordDictList[0], 0)
     N = len(wordDictList)
     for wordDict in wordDictList:
         # 遍历字典中的每个词汇
-        for word, count in wordDict:
-            if count > 1:
-                idfDict[word] = +1
-    for word, ni in idfDict.items():
-        idfDict[word] = math.log((N + 1 / ni + 1))
+        for words, count in wordDict.items():
+            if count > 0:
+                idfDict[words] = +1
+    for word1, ni in idfDict.items():
+        idfDict[word1] = math.log10((N + 1 / ni + 1))
     return idfDict
 
 
@@ -53,7 +53,9 @@ if __name__ == '__main__':
 
     # 计算TF
     tfA = computedTf(wordDictA, bowA)
-    tfB = computedTf(wordDictA, bowB)
-    idfs = computeIDF(wordDictA, wordDictB)
-    tfidfA=computeTFIDF(tfA,idfs)
+    tfB = computedTf(wordDictB, bowB)
+    idfs = computeIDF([wordDictA,wordDictB])
+    tfidfA = computeTFIDF(tfA, idfs)
     tfidfB = computeTFIDF(tfB, idfs)
+    df =pd.DataFrame([tfidfA,tfidfB])
+    print(df)
